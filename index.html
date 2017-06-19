@@ -1,0 +1,534 @@
+﻿<html>
+<head>
+  <meta charset="UTF-8">
+  <title>chat</title>
+  <style type="text/css">
+  #msg {
+    background-color: #000;
+    width: 640px;
+    height: 360px;
+    overflow: hidden;
+    white-space : nowrap;
+    cursor: default;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    position: relative;
+    float : left;
+  }
+  #log {
+	  background-color: #FFF;
+	  width: 320px;
+	  height: 360px;
+	  overflow: scroll;
+	  white-space : normal;
+	  cursor: default;
+	  -ms-user-select: none;
+	  -moz-user-select: none;
+	  -webkit-user-select: none;
+	  user-select: none;
+	  position: relative;
+	  float:left;
+  }
+  
+  div.logcomment{
+    position: absolute;
+    font-size: 15px;
+    line-height: 1;
+    z-index: 2;
+    color: #000;
+    text-shadow: -1px -1px #FFF, 1px -1px #FFF,-1px 1px #FFF, 1px 1px #FFF;
+ }
+
+  div.logtitle{
+	  position: absolute;
+	  font-size: 15px;
+	  line-height: 1;
+	  z-index: 2;
+	  color: #FFF;
+	  text-shadow: -1px -1px #000, 1px -1px #000,-1px 1px #000, 1px 1px #000;
+	  background-color: #666666;
+	  width: 320px;
+	  height: 20px;
+	  text-align: center;
+  }
+
+
+ div.comment0,div.comment1,div.comment2,div.comment3,div.comment4,div.comment5,div.comment6,div.comment7,div.comment8,div.comment9,div.comment10,div.comment11,div.comment12{
+    position: absolute;
+    font-size: 24px;
+    line-height: 1;
+    z-index: 2;
+    color: #fff;
+    text-shadow: -1px -1px #000, 1px -1px #000,-1px 1px #000, 1px 1px #000;
+ }
+ .comment0{
+    animation-name: lane0;
+    animation-timing-function: linear;
+    animation-duration: 8s;
+    animation-fill-mode: forwards;
+ }
+ .comment1{
+    animation-name: lane1;
+    animation-timing-function: linear;
+    animation-duration: 8s;
+    animation-fill-mode: forwards;
+ }
+ .comment2{
+    animation-name: lane2;
+    animation-timing-function: linear;
+    animation-duration: 8s;
+    animation-fill-mode: forwards;
+ }
+ .comment3{
+    animation-name: lane3;
+    animation-timing-function: linear;
+    animation-duration: 8s;
+    animation-fill-mode: forwards;
+ }
+ .comment4{
+    animation-name: lane4;
+    animation-timing-function: linear;
+    animation-duration: 8s;
+    animation-fill-mode: forwards;
+ }
+ .comment5{
+    animation-name: lane5;
+    animation-timing-function: linear;
+    animation-duration: 8s;
+    animation-fill-mode: forwards;
+ }
+ .comment6{
+    animation-name: lane6;
+    animation-timing-function: linear;
+    animation-duration: 8s;
+    animation-fill-mode: forwards;
+ }
+ .comment7{
+    animation-name: lane7;
+    animation-timing-function: linear;
+    animation-duration: 8s;
+    animation-fill-mode: forwards;
+ }
+ .comment8{
+    animation-name: lane8;
+    animation-timing-function: linear;
+    animation-duration: 8s;
+    animation-fill-mode: forwards;
+ }
+ .comment9{
+    animation-name: lane9;
+    animation-timing-function: linear;
+    animation-duration: 8s;
+    animation-fill-mode: forwards;
+ }
+ .comment10{
+    animation-name: lane10;
+    animation-timing-function: linear;
+    animation-duration: 8s;
+    animation-fill-mode: forwards;
+ }
+ .comment11{
+    animation-name: lane11;
+    animation-timing-function: linear;
+    animation-duration: 8s;
+    animation-fill-mode: forwards;
+ }
+ .comment12{
+    animation-name: lane12;
+    animation-timing-function: linear;
+    animation-duration: 8s;
+    animation-fill-mode: forwards;
+ }
+
+  div.stamp0,div.stamp1,div.stamp2,div.stamp3,div.stamp4,div.stamp5,div.stamp6,div.stamp7,div.stamp8,div.stamp9,div.stamp10,div.stamp11,div.stamp12,div.stamp13,div.stamp14,div.stamp15,div.stamp16,div.stamp17,div.stamp18,div.stamp19,div.stamp20,div.stamp21,div.stamp22,div.stamp23,div.stamp24,div.stamp25{
+    position: absolute;
+    font-size:25px;
+    line-height: 1;
+    z-index: 2;
+    color: #fff;
+    text-shadow: -1px -1px #000, 1px -1px #000,-1px 1px #000, 1px 1px #000;
+ }
+ .stamp0{
+    animation-name: lane13;
+    animation-timing-function: linear;
+    animation-duration: 8s;
+    animation-fill-mode: forwards;
+ }
+ .stamp1{
+    animation-name: lane14;
+    animation-timing-function: linear;
+    animation-duration: 8s;
+    animation-fill-mode: forwards;
+ }
+ .stamp2{
+    animation-name: lane15;
+    animation-timing-function: linear;
+    animation-duration: 8s;
+    animation-fill-mode: forwards;
+ }
+ .stamp3{
+    animation-name: lane16;
+    animation-timing-function: linear;
+    animation-duration: 8s;
+    animation-fill-mode: forwards;
+ }
+ .stamp4{
+    animation-name: lane17;
+    animation-timing-function: linear;
+    animation-duration: 8s;
+    animation-fill-mode: forwards;
+ }
+ .stamp5{
+    animation-name: lane18;
+    animation-timing-function: linear;
+    animation-duration: 8s;
+    animation-fill-mode: forwards;
+ }
+ .stamp6{
+    animation-name: lane19;
+    animation-timing-function: linear;
+    animation-duration: 8s;
+    animation-fill-mode: forwards;
+ }
+ .stamp7{
+    animation-name: lane20;
+    animation-timing-function: linear;
+    animation-duration: 8s;
+    animation-fill-mode: forwards;
+ }
+ .stamp8{
+    animation-name: lane21;
+    animation-timing-function: linear;
+    animation-duration: 8s;
+    animation-fill-mode: forwards;
+ }
+ .stamp9{
+    animation-name: lane22;
+    animation-timing-function: linear;
+    animation-duration: 8s;
+    animation-fill-mode: forwards;
+ }
+ .stamp10{
+    animation-name: lane23;
+    animation-timing-function: linear;
+    animation-duration: 8s;
+    animation-fill-mode: forwards;
+ }
+ .stamp11{
+    animation-name: lane24;
+    animation-timing-function: linear;
+    animation-duration: 8s;
+    animation-fill-mode: forwards;
+ }
+ .stamp12{
+    animation-name: lane25;
+    animation-timing-function: linear;
+    animation-duration: 8s;
+    animation-fill-mode: forwards;
+ }
+ .stamp13{
+    animation-name: lane26;
+    animation-timing-function: linear;
+    animation-duration: 8s;
+    animation-fill-mode: forwards;
+ }
+ .stamp14{
+    animation-name: lane27;
+    animation-timing-function: linear;
+    animation-duration: 8s;
+    animation-fill-mode: forwards;
+ }
+ .stamp15{
+    animation-name: lane28;
+    animation-timing-function: linear;
+    animation-duration: 8s;
+    animation-fill-mode: forwards;
+ }
+ .stamp16{
+    animation-name: lane29;
+    animation-timing-function: linear;
+    animation-duration: 8s;
+    animation-fill-mode: forwards;
+ }
+ .stamp17{
+    animation-name: lane30;
+    animation-timing-function: linear;
+    animation-duration: 8s;
+    animation-fill-mode: forwards;
+ }
+ .stamp18{
+    animation-name: lane31;
+    animation-timing-function: linear;
+    animation-duration: 8s;
+    animation-fill-mode: forwards;
+ }
+ .stamp19{
+    animation-name: lane32;
+    animation-timing-function: linear;
+    animation-duration: 8s;
+    animation-fill-mode: forwards;
+ }
+ .stamp20{
+    animation-name: lane33;
+    animation-timing-function: linear;
+    animation-duration: 8s;
+    animation-fill-mode: forwards;
+ }
+.stamp21{
+    animation-name: lane34;
+    animation-timing-function: linear;
+    animation-duration: 8s;
+    animation-fill-mode: forwards;
+ }
+ .stamp22{
+    animation-name: lane35;
+    animation-timing-function: linear;
+    animation-duration: 8s;
+    animation-fill-mode: forwards;
+ }
+ .stamp23{
+    animation-name: lane36;
+    animation-timing-function: linear;
+    animation-duration: 8s;
+    animation-fill-mode: forwards;
+ }
+ .stamp24{
+    animation-name: lane37;
+    animation-timing-function: linear;
+    animation-duration: 8s;
+    animation-fill-mode: forwards;
+ }
+ .stamp25{
+    animation-name: lane38;
+    animation-timing-function: linear;
+    animation-duration: 8s;
+    animation-fill-mode: forwards;
+ }
+
+ @keyframes lane0 {
+from{ transform: translate(640px, 0); }
+to{ transform: translate(-1280px, 0); }
+ }
+ @keyframes lane1 {
+from{ transform: translate(640px, 25px); }
+to{ transform: translate(-1280px, 25px); }
+}
+ @keyframes lane2 {
+from{ transform: translate(640px, 50px); }
+to{ transform: translate(-1280px, 50px); }
+}
+ @keyframes lane3 {
+from{ transform: translate(640px, 75px); }
+to{ transform: translate(-1280px, 75px); }
+}
+@keyframes lane4 {
+from{ transform: translate(640px, 100px); }
+to{ transform: translate(-1280px, 100px); }
+}
+@keyframes lane5 {
+from{ transform: translate(640px, 125px); }
+to{ transform: translate(-1280px, 125px); }
+}
+@keyframes lane6 {
+from{ transform: translate(640px, 150px); }
+to{ transform: translate(-1280px, 150px); }
+}
+@keyframes lane7 {
+from{ transform: translate(640px, 175px); }
+to{ transform: translate(-1280px, 175px); }
+}
+@keyframes lane8 {
+from{ transform: translate(640px, 200px); }
+to{ transform: translate(-1280px, 200px); }
+}
+@keyframes lane9 {
+from{ transform: translate(640px, 225px); }
+to{ transform: translate(-1280px, 225px); }
+}
+@keyframes lane10 {
+from{ transform: translate(640px, 250px); }
+to{ transform: translate(-1280px, 250px); }
+}
+@keyframes lane11 {
+from{ transform: translate(640px, 275px); }
+to{ transform: translate(-1280px, 275px); }
+}
+@keyframes lane12 {
+from{ transform: translate(640px, 300px); }
+to{ transform: translate(-1280px, 300px); }
+}
+ @keyframes lane13 {
+from{ transform: translate(0, 360px); }
+to{ transform: translate(0, -720px); }
+ }
+ @keyframes lane14 {
+from{ transform: translate(50px, 360px); }
+to{ transform: translate(50px, -720px); }
+}
+ @keyframes lane15 {
+from{ transform: translate(100px, 360px); }
+to{ transform: translate(100px, -720px); }
+}
+ @keyframes lane16 {
+from{ transform: translate(150px, 360px); }
+to{ transform: translate(150px, -720px); }
+}
+@keyframes lane17 {
+from{ transform: translate(200px, 360px); }
+to{ transform: translate(200px, -720px); }
+}
+@keyframes lane18 {
+from{ transform: translate(250px, 360px); }
+to{ transform: translate(250px, -720px); }
+}
+@keyframes lane19 {
+from{ transform: translate(300px, 360px); }
+to{ transform: translate(300px, -720px); }
+}
+@keyframes lane20 {
+from{ transform: translate(350px, 360px); }
+to{ transform: translate(350px, -720px); }
+}
+@keyframes lane21 {
+from{ transform: translate(400px, 360px); }
+to{ transform: translate(400px, -720px); }
+}
+@keyframes lane22 {
+from{ transform: translate(450px, 360px); }
+to{ transform: translate(450px, -720px); }
+}
+@keyframes lane23 {
+from{ transform: translate(500px, 360px); }
+to{ transform: translate(500px, -720px); }
+}
+@keyframes lane24 {
+from{ transform: translate(550px, 360px); }
+to{ transform: translate(550px, -720px); }
+}
+@keyframes lane25 {
+from{ transform: translate(600px, 360px); }
+to{ transform: translate(600px, -720px); }
+}
+ @keyframes lane26 {
+from{ transform: translate(25px, 360px); }
+to{ transform: translate(25px, -720px); }
+}
+ @keyframes lane27 {
+from{ transform: translate(75px, 360px); }
+to{ transform: translate(75px, -720px); }
+}
+ @keyframes lane28 {
+from{ transform: translate(125px, 360px); }
+to{ transform: translate(125px, -720px); }
+}
+ @keyframes lane29 {
+from{ transform: translate(175px, 360px); }
+to{ transform: translate(175px, -720px); }
+}
+ @keyframes lane30 {
+from{ transform: translate(225px, 360px); }
+to{ transform: translate(225px, -720px); }
+}
+ @keyframes lane31 {
+from{ transform: translate(275px, 360px); }
+to{ transform: translate(275px, -720px); }
+}
+ @keyframes lane32 {
+from{ transform: translate(325px, 360px); }
+to{ transform: translate(325px, -720px); }
+}
+ @keyframes lane33 {
+from{ transform: translate(375px, 360px); }
+to{ transform: translate(375px, -720px); }
+}
+ @keyframes lane34 {
+from{ transform: translate(425px, 360px); }
+to{ transform: translate(425px, -720px); }
+}
+ @keyframes lane35 {
+from{ transform: translate(475px, 360px); }
+to{ transform: translate(475px, -720px); }
+}
+ @keyframes lane36 {
+from{ transform: translate(525px, 360px); }
+to{ transform: translate(525px, -720px); }
+}
+ @keyframes lane37 {
+from{ transform: translate(575px, 360px); }
+to{ transform: translate(575px, -720px); }
+ @keyframes lane38 {
+from{ transform: translate(625px, 360px); }
+to{ transform: translate(625px, -720px); }
+}
+  </style>
+</head>
+<body>
+  <div id="msg"></div>
+  <div id="log"><div class="logtitle">コメント</div><br></div>
+  <div style="clear:both">
+  <input type="text" id="msg_input" style="width:200px;">
+  <button onclick="publishMessage();">語る</button>
+  <button onclick="publishMessage2();">スタンプ</button>
+  </div>
+  <script src="/socket.io/socket.io.js"></script>
+  <script type="text/javascript">
+    // 1.イベントとコールバックの定義
+    var socketio = io.connect('http://ec2-34-208-87-80.us-west-2.compute.amazonaws.com:3000/');
+
+    socketio.on("connected", function(name) {});
+    socketio.on("publish", function (data) { addMessage(data.value); addMessage2(data.value); });
+    socketio.on("publish2", function (data) { addMessage2(data.value); });
+    socketio.on("publish3", function (data) {});
+    socketio.on("disconnect", function () {});
+
+    // 2.イベントに絡ませる関数の定義
+    function start(name) {
+      socketio.emit("connected", name);
+    }
+
+    function publishMessage() {
+      var textInput = document.getElementById('msg_input');
+      if(textInput.value == ""){
+      }else{
+      var num = "comment" + Math.floor(Math.random()*12);
+      var msg = "<div class='"+ num +"'>" + textInput.value + " "  + myName +  "
+</div>";
+      socketio.emit("publish", {value: msg});
+      var logmsg = "<div class='logcomment'>" + textInput.value + "</div><br/>";
+      socketio.emit("publish2", {value: logmsg});
+      var backlog = textInput.value + " " + myName;
+      socketio.emit("publish3", {value: backlog});
+      textInput.value = '';
+      }
+    }
+
+    function publishMessage2() {
+      var num = "stamp" + Math.floor(Math.random()*25);
+      var msg = "<div class='"+ num +"'><img src='http://ec2-34-208-87-80.us-west-2.compute.amazonaws.com/support_application/image/fly.png' alt='風船' width='2200' height='300'></div>";
+      socketio.emit("publish", {value: msg});
+    }
+
+    function addMessage (msg) {
+      var domMeg = document.createElement('div');
+      domMeg.innerHTML = msg;
+      msgArea.appendChild(domMeg);
+    }
+
+
+    function addMessage2 (log) {
+      var logMeg = document.createElement('div');
+      logMeg.innerHTML = log;
+      logArea.appendChild(logMeg);
+    }
+
+
+    // 3.開始処理
+    var msgArea = document.getElementById("msg");
+    var logArea = document.getElementById("log");
+    var myName = Math.floor(Math.random()*100) + "さん";
+    start(myName);
+  </script>
+</body>
+</html>
